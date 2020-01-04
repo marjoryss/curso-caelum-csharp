@@ -226,7 +226,60 @@ namespace Introducao
 
             }
 
+        }
 
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+            /* 100 mouse 39,90
+               101 notebook 4000,00
+               102 Monitor 695,00
+               103 Mousepad 10,00        
+           */                 
+    
+            int quantidade = 2;
+            int codProduto = 101;
+            double valorFinal = 0;
+
+            switch (codProduto)
+            {
+                case (100):
+                    valorFinal = 39.90 * quantidade;
+                    break;
+                case (101):
+                    valorFinal = 4000.00 * quantidade;
+                    break;
+                case (102):
+                    valorFinal = 695.00 * quantidade;
+                    break;
+                case (103):
+                    valorFinal = 10.00 * quantidade;
+                    break;                                                         
+            }
+            MessageBox.Show($"Total Pedido:{ valorFinal}");
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            double valorAplicado = 1000.00;
+
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    valorAplicado = valorAplicado * 1.01;                
+            //}
+
+            //MessageBox.Show($"Valor APlicado: {valorAplicado}");
+
+            int contador = 1;
+
+            while (contador <= 12)
+
+            {
+                contador++;
+                valorAplicado = valorAplicado * 1.01;
+             }
+            MessageBox.Show($"Valor APlicado: {valorAplicado}");
         }
     }
 }
