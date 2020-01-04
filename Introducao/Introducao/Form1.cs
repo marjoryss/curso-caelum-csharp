@@ -136,7 +136,7 @@ namespace Introducao
 
             else if (saldo < 1000000.0)
             {
-                MessageBox.Show("Você é um bom cliente");
+                MessageBox.Show("Você é um bom cliente!");
             }
             else
             {
