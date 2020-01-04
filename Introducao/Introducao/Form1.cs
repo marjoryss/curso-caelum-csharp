@@ -144,5 +144,89 @@ namespace Introducao
             }
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // bool só é valido se for verdadeiro ou falso (true/false)
+            // || (Shift\) é OU e  && é E
+
+            int idade = 15;
+            bool amigo = true;
+            bool entradaPermitida = idade >= 18 && amigo;
+
+            if (entradaPermitida)
+                MessageBox.Show("Bem vindo a festa");
+            else
+                MessageBox.Show("Entrada não permitida");
+
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            int idade = 15;
+            bool brasileiro = true;
+            bool votoPermitido = idade >= 16 && brasileiro;
+
+            if (votoPermitido)
+                MessageBox.Show("Vote Consciente!");
+            else
+                MessageBox.Show("Voto não permitido!");
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            double valorNotaFiscal = 500;
+            double imposto = 0;
+
+            if (valorNotaFiscal <= 999)
+                imposto = 0.02;
+            else if (valorNotaFiscal > 1000 && valorNotaFiscal < 2999)
+                imposto = 0.025;
+            else if (valorNotaFiscal > 3000 && valorNotaFiscal < 6999)
+                imposto = 0.028;
+            else if (valorNotaFiscal >= 7000)
+                imposto = 0.03;
+
+            MessageBox.Show($"imposto: {imposto} e o valor da NF é {(valorNotaFiscal * imposto) + valorNotaFiscal}");
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // operador ternário ?  substitui if e else
+
+            int valor = 9;
+            string mensagem = "";
+
+            mensagem = valor > 10 ? "Maior que Dez" : "Menor que dez";
+            MessageBox.Show(mensagem);
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            string estado = "SP";
+
+            switch (estado)
+            {
+                case "SP":
+                    MessageBox.Show("Entregando");
+                    break;
+                case "RJ":
+                    MessageBox.Show("Entregando");
+                    break;
+                case "MG":
+                    MessageBox.Show("Entregando");
+                    break;
+                default:
+                    MessageBox.Show("Não entregamos");
+                    break;
+
+            }
+
+
+        }
     }
 }
