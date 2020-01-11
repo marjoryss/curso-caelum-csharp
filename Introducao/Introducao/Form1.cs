@@ -235,8 +235,8 @@ namespace Introducao
                101 notebook 4000,00
                102 Monitor 695,00
                103 Mousepad 10,00        
-           */                 
-    
+           */
+
             int quantidade = 2;
             int codProduto = 101;
             double valorFinal = 0;
@@ -254,7 +254,7 @@ namespace Introducao
                     break;
                 case (103):
                     valorFinal = 10.00 * quantidade;
-                    break;                                                         
+                    break;
             }
             MessageBox.Show($"Total Pedido:{ valorFinal}");
 
@@ -278,8 +278,76 @@ namespace Introducao
             {
                 contador++;
                 valorAplicado = valorAplicado * 1.01;
-             }
+            }
             MessageBox.Show($"Valor APlicado: {valorAplicado}");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            int total = 2;
+            for (int i = 0; i < 5; i += 1)
+            {
+                total = total * 2;
+            }
+            MessageBox.Show($"O total é: {total}");
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            int soma = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                soma = soma + i;
+            }
+            MessageBox.Show($"Soma dos números é:{soma}");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            int total = 0;
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    MessageBox.Show($"Numeros ={i}");
+                }
+
+            }
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            int total = 0;
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 != 0)
+                {
+                    total = total + i;
+
+                }
+            }
+            MessageBox.Show($"Numeros ={total}");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0 || i % 4 == 0)
+                {
+                    MessageBox.Show($"Numeros ={i}");
+                }
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            int fatorial = 1;
+            for (int n = 1; n<=10 ; n++)
+            {
+                MessageBox.Show($"Numeros ={n}");
+            }
         }
     }
 }
