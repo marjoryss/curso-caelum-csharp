@@ -33,19 +33,30 @@ namespace BancoCaelum
         {
             double valor = Convert.ToDouble(txtValor.Text);
 
-            this.ContaForm.Saca(valor);
-            lblStatus.Text = ($"Saque realizado com sucesso!");
-            lblStatus.BackColor = Color.Red;
-            txtValor.Clear();
-            atualizaSaldo();
+           if(this.ContaForm.Saca(valor))
+            {
+                lblStatus.Text = ($"Saque realizado com sucesso!");
+                lblStatus.BackColor = Color.Red;
+                txtValor.Clear();
+                atualizaSaldo();
+            }
+            else
+            {
+                lblStatus.Text = ($"Erro ao sacar!");
+                lblStatus.BackColor = Color.Red;
+                txtValor.Clear();
+                atualizaSaldo();
+            }
+
+            
 
         }
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            
+
             double valor = Convert.ToDouble(txtValor.Text); //converter string em double(numero)  double.parse também converte.
-                                  
+
             this.ContaForm.Deposita(valor);
 
             lblStatus.Text = ($"Depósito realizado com sucesso!");
@@ -64,6 +75,7 @@ namespace BancoCaelum
         {
             ContaForm = new Conta();
             this.ContaForm.Numero = 1;
+            this.ContaForm.Tipo = "cp";
             this.ContaForm.Titular = new Cliente("Marjory");
 
             txtNome.Text = ContaForm.Titular.Nome;
@@ -75,5 +87,6 @@ namespace BancoCaelum
         {
             MessageBox.Show("Cadastrado com Sucesso!");
         }
+
     }
 }

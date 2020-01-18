@@ -7,14 +7,21 @@ namespace BancoCaelum
         public int Numero { get; set; }
         public double Saldo { get; private set; }
         public Cliente Titular { get; set; }
+        public string Tipo { get; set; }
 
-        public void Saca(double valorSaque)
+        public bool Saca(double valorSaque)
         {
-            if (Saldo >= valorSaque)
+            if (this.Tipo == "cp" && this.Saldo >= valorSaque + 0.10)
             {
-                Saldo -= valorSaque;
+                this.Saldo = this.Saldo - (valorSaque + 0.10);
+                return true;     
             }
-
+            if (this.Saldo >= valorSaque && this.Tipo == "cc")
+            {
+                this.Saldo = this.Saldo - valorSaque;
+                return true;
+            }
+            return false;
         }
 
         public void Deposita(double valorDeposito)
