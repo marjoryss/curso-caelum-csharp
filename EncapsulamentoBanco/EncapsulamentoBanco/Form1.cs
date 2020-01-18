@@ -21,6 +21,8 @@ namespace EncapsulamentoBanco
         {
             Conta Marjory = new Conta();
             Marjory.Deposita(100);
+            Marjory.Titular = new Cliente("Rose", "367632", 31); // criar um titular para o objeto conta 
+
 
             MessageBox.Show($"Saldo é:{Marjory.Saldo}");
 

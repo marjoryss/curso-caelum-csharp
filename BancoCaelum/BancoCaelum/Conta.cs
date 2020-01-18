@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
-namespace EncapsulamentoBanco
+namespace BancoCaelum
 {
-    class Conta
+    public class Conta
     {
         public int Numero { get; set; }
         public double Saldo { get; private set; }
@@ -14,7 +10,7 @@ namespace EncapsulamentoBanco
 
         public void Saca(double valorSaque)
         {
-            if (Saldo>=valorSaque)
+            if (Saldo >= valorSaque)
             {
                 Saldo -= valorSaque;
             }
@@ -23,12 +19,11 @@ namespace EncapsulamentoBanco
 
         public void Deposita(double valorDeposito)
         {
-            if (valorDeposito>0)
+            if (valorDeposito > 0)
             {
                 Saldo += valorDeposito;
             }
         }
 
     }
-
 }

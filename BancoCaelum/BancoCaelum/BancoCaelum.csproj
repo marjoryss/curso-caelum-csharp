@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA2CA894-A464-4605-B9F9-C5223E8BCA98}</ProjectGuid>
+    <ProjectGuid>{87015DEF-DE9B-437A-B4DE-F8D6EA59C7A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EncapsulamentoBanco</RootNamespace>
-    <AssemblyName>EncapsulamentoBanco</AssemblyName>
+    <RootNamespace>BancoCaelum</RootNamespace>
+    <AssemblyName>BancoCaelum</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
