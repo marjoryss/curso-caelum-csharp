@@ -73,9 +73,8 @@ namespace BancoCaelum
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ContaForm = new Conta();
+            ContaForm = new ContaCorrente();
             this.ContaForm.Numero = 1;
-            this.ContaForm.Tipo = "cp";
             this.ContaForm.Titular = new Cliente("Marjory");
 
             txtNome.Text = ContaForm.Titular.Nome;
@@ -88,5 +87,13 @@ namespace BancoCaelum
             MessageBox.Show("Cadastrado com Sucesso!");
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Relatorio rel = new Relatorio();
+            rel.TotalizadorDeContas(ContaForm);
+
+            MessageBox.Show($"Total do Banco é:{rel.totalBanco}");
+
+        }
     }
 }
