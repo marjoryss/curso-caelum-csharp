@@ -9,9 +9,13 @@ namespace BancoCaelum
     class Relatorio
     {
         public double totalBanco { get; private set; }
-        public void TotalizadorDeContas(Conta conta)
+        public void TotalizadorDeContas(Conta[] contas)
         {
-            totalBanco += conta.Saldo;
+            foreach (Conta selecionada in contas)
+            {
+                totalBanco += selecionada.Saldo;
+            }
+           
         }     
 
 

@@ -26,6 +26,18 @@ namespace BancoCaelum
                 Saldo += valorDeposito;
             }
         }
+        public bool Transfere(Conta contaDestino, double valor)
+        {
+            if (Saldo >= valor)
+            {
+                Saca(valor);
+                contaDestino.Deposita(valor);
+                return true;
+
+            }
+            return false;
+
+        }
 
     }
 }

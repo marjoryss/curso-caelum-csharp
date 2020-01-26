@@ -23,6 +23,8 @@
 
             public Cliente() { } // metodo construtor as informações são opcionais sem prejudicar outros projetos que são obrigatório
 
+        
+          
         public Cliente(string nome)
         {
             Nome = nome;
