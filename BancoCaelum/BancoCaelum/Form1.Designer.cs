@@ -38,22 +38,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSacar = new System.Windows.Forms.Button();
             this.btnDepositar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.botaoNovaConta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.comboContas = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboContas = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.BtnTransferir = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboContaDestino = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.botaoNovaConta = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnExcluirConta = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -145,21 +145,11 @@
             this.btnDepositar.UseVisualStyleBackColor = true;
             this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(45, 108);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 10;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnExcluirConta);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.botaoNovaConta);
-            this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCPF);
@@ -172,6 +162,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // botaoNovaConta
+            // 
+            this.botaoNovaConta.Location = new System.Drawing.Point(60, 106);
+            this.botaoNovaConta.Name = "botaoNovaConta";
+            this.botaoNovaConta.Size = new System.Drawing.Size(97, 22);
+            this.botaoNovaConta.TabIndex = 18;
+            this.botaoNovaConta.Text = "Nova Conta";
+            this.botaoNovaConta.UseVisualStyleBackColor = true;
+            this.botaoNovaConta.Click += new System.EventHandler(this.botaoNovaConta_Click);
             // 
             // groupBox2
             // 
@@ -199,6 +199,27 @@
             this.txtSaldo.Size = new System.Drawing.Size(198, 20);
             this.txtSaldo.TabIndex = 11;
             // 
+            // comboContas
+            // 
+            this.comboContas.FormattingEnabled = true;
+            this.comboContas.Location = new System.Drawing.Point(96, 22);
+            this.comboContas.Margin = new System.Windows.Forms.Padding(2);
+            this.comboContas.Name = "comboContas";
+            this.comboContas.Size = new System.Drawing.Size(198, 21);
+            this.comboContas.TabIndex = 15;
+            this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Escolha a Conta";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -213,9 +234,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 330);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 293);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(710, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(701, 22);
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -234,36 +255,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboContas
-            // 
-            this.comboContas.FormattingEnabled = true;
-            this.comboContas.Location = new System.Drawing.Point(96, 22);
-            this.comboContas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboContas.Name = "comboContas";
-            this.comboContas.Size = new System.Drawing.Size(198, 21);
-            this.comboContas.TabIndex = 15;
-            this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 22);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Escolha a Conta";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
             // BtnTransferir
             // 
             this.BtnTransferir.Controls.Add(this.button2);
             this.BtnTransferir.Controls.Add(this.comboContaDestino);
             this.BtnTransferir.Controls.Add(this.label7);
             this.BtnTransferir.Location = new System.Drawing.Point(325, 177);
-            this.BtnTransferir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnTransferir.Margin = new System.Windows.Forms.Padding(2);
             this.BtnTransferir.Name = "BtnTransferir";
-            this.BtnTransferir.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnTransferir.Padding = new System.Windows.Forms.Padding(2);
             this.BtnTransferir.Size = new System.Drawing.Size(307, 94);
             this.BtnTransferir.TabIndex = 17;
             this.BtnTransferir.TabStop = false;
@@ -272,7 +272,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(21, 58);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(262, 22);
             this.button2.TabIndex = 19;
@@ -284,7 +284,7 @@
             // 
             this.comboContaDestino.FormattingEnabled = true;
             this.comboContaDestino.Location = new System.Drawing.Point(99, 17);
-            this.comboContaDestino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboContaDestino.Margin = new System.Windows.Forms.Padding(2);
             this.comboContaDestino.Name = "comboContaDestino";
             this.comboContaDestino.Size = new System.Drawing.Size(181, 21);
             this.comboContaDestino.TabIndex = 18;
@@ -299,16 +299,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Escolha a Conta";
             // 
-            // botaoNovaConta
-            // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(141, 109);
-            this.botaoNovaConta.Name = "botaoNovaConta";
-            this.botaoNovaConta.Size = new System.Drawing.Size(117, 22);
-            this.botaoNovaConta.TabIndex = 18;
-            this.botaoNovaConta.Text = "Nova Conta";
-            this.botaoNovaConta.UseVisualStyleBackColor = true;
-            this.botaoNovaConta.Click += new System.EventHandler(this.botaoNovaConta_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button1);
@@ -317,13 +307,23 @@
             this.groupBox3.Size = new System.Drawing.Size(295, 89);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Banco";
+            // 
+            // btnExcluirConta
+            // 
+            this.btnExcluirConta.Location = new System.Drawing.Point(163, 106);
+            this.btnExcluirConta.Name = "btnExcluirConta";
+            this.btnExcluirConta.Size = new System.Drawing.Size(95, 23);
+            this.btnExcluirConta.TabIndex = 19;
+            this.btnExcluirConta.Text = "Excluir Conta";
+            this.btnExcluirConta.UseVisualStyleBackColor = true;
+            this.btnExcluirConta.Click += new System.EventHandler(this.btnExcluirConta_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 352);
+            this.ClientSize = new System.Drawing.Size(701, 315);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BtnTransferir);
             this.Controls.Add(this.statusStrip1);
@@ -358,7 +358,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSacar;
         private System.Windows.Forms.Button btnDepositar;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSaldo;
@@ -374,6 +373,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnExcluirConta;
     }
 }
 
