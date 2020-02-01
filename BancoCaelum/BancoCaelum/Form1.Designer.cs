@@ -39,6 +39,7 @@
             this.btnSacar = new System.Windows.Forms.Button();
             this.btnDepositar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExcluirConta = new System.Windows.Forms.Button();
             this.botaoNovaConta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
@@ -53,7 +54,7 @@
             this.comboContaDestino = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnExcluirConta = new System.Windows.Forms.Button();
+            this.btnImposto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -163,6 +164,16 @@
             this.groupBox1.Text = "Cadastro";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnExcluirConta
+            // 
+            this.btnExcluirConta.Location = new System.Drawing.Point(163, 106);
+            this.btnExcluirConta.Name = "btnExcluirConta";
+            this.btnExcluirConta.Size = new System.Drawing.Size(95, 23);
+            this.btnExcluirConta.TabIndex = 19;
+            this.btnExcluirConta.Text = "Excluir Conta";
+            this.btnExcluirConta.UseVisualStyleBackColor = true;
+            this.btnExcluirConta.Click += new System.EventHandler(this.btnExcluirConta_Click);
+            // 
             // botaoNovaConta
             // 
             this.botaoNovaConta.Location = new System.Drawing.Point(60, 106);
@@ -247,7 +258,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 37);
+            this.button1.Location = new System.Drawing.Point(8, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(281, 20);
             this.button1.TabIndex = 14;
@@ -301,6 +312,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnImposto);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(13, 182);
             this.groupBox3.Name = "groupBox3";
@@ -309,15 +321,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Banco";
             // 
-            // btnExcluirConta
+            // btnImposto
             // 
-            this.btnExcluirConta.Location = new System.Drawing.Point(163, 106);
-            this.btnExcluirConta.Name = "btnExcluirConta";
-            this.btnExcluirConta.Size = new System.Drawing.Size(95, 23);
-            this.btnExcluirConta.TabIndex = 19;
-            this.btnExcluirConta.Text = "Excluir Conta";
-            this.btnExcluirConta.UseVisualStyleBackColor = true;
-            this.btnExcluirConta.Click += new System.EventHandler(this.btnExcluirConta_Click);
+            this.btnImposto.Location = new System.Drawing.Point(8, 53);
+            this.btnImposto.Name = "btnImposto";
+            this.btnImposto.Size = new System.Drawing.Size(279, 23);
+            this.btnImposto.TabIndex = 15;
+            this.btnImposto.Text = "Imposto";
+            this.btnImposto.UseVisualStyleBackColor = true;
+            this.btnImposto.Click += new System.EventHandler(this.btnImposto_Click);
             // 
             // Form1
             // 
@@ -374,6 +386,7 @@
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnExcluirConta;
+        private System.Windows.Forms.Button btnImposto;
     }
 }
 

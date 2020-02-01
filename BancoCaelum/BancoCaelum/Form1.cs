@@ -193,5 +193,22 @@ namespace BancoCaelum
             }
 
         }
+
+        private void btnImposto_Click(object sender, EventArgs e)
+        {
+            ContaCorrente conta = new ContaCorrente();
+            conta.Deposita(200.0);
+
+            MessageBox.Show($"Imposto da CC: {conta.CalculaTributos()}");
+
+            Itributavel t = conta;
+            MessageBox.Show($"Imposto da conta pela Interface {t.CalculaTributos()}");
+
+            SeguroDeVida sv = new SeguroDeVida();
+            MessageBox.Show($"Imposto do Seguro de Vida {sv.CalculaTributos()}");
+
+            t = sv;
+            MessageBox.Show($"Imposto do seguro pela Interface {t.CalculaTributos()}");
+        }
     }
 }
