@@ -10,12 +10,25 @@ namespace BancoCaelum
     {
         public override bool Saca(double valorSaque)
         {
-            return base.Saca(valorSaque + 0.05);
-        }
+            if (this.Saldo >= valorSaque)
+            {
+                this.Saldo = this.Saldo - (valorSaque+0.05);
+                return true;
+            }
+            return false;
+                                         }
 
         public override void Deposita(double valorDeposito)
         {
-            base.Deposita(valorDeposito-0.10);
+            if (valorDeposito > 0)
+            {
+                Saldo += valorDeposito-0.1;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Numero} - cc - {Titular.Nome}";
         }
     }
 

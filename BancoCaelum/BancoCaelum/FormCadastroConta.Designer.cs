@@ -33,6 +33,10 @@
             this.textNumero = new System.Windows.Forms.TextBox();
             this.textTitular = new System.Windows.Forms.TextBox();
             this.botaoCadastro = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbContaCorrente = new System.Windows.Forms.RadioButton();
+            this.rdbContaPoupanca = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +73,7 @@
             // 
             // botaoCadastro
             // 
-            this.botaoCadastro.Location = new System.Drawing.Point(62, 104);
+            this.botaoCadastro.Location = new System.Drawing.Point(62, 173);
             this.botaoCadastro.Name = "botaoCadastro";
             this.botaoCadastro.Size = new System.Drawing.Size(121, 23);
             this.botaoCadastro.TabIndex = 4;
@@ -77,11 +81,46 @@
             this.botaoCadastro.UseVisualStyleBackColor = true;
             this.botaoCadastro.Click += new System.EventHandler(this.FormCadastroConta_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbContaPoupanca);
+            this.groupBox1.Controls.Add(this.rdbContaCorrente);
+            this.groupBox1.Location = new System.Drawing.Point(15, 95);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 62);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo";
+            // 
+            // rdbContaCorrente
+            // 
+            this.rdbContaCorrente.AutoSize = true;
+            this.rdbContaCorrente.Checked = true;
+            this.rdbContaCorrente.Location = new System.Drawing.Point(6, 29);
+            this.rdbContaCorrente.Name = "rdbContaCorrente";
+            this.rdbContaCorrente.Size = new System.Drawing.Size(72, 17);
+            this.rdbContaCorrente.TabIndex = 0;
+            this.rdbContaCorrente.TabStop = true;
+            this.rdbContaCorrente.Text = "CCorrente";
+            this.rdbContaCorrente.UseVisualStyleBackColor = true;
+            // 
+            // rdbContaPoupanca
+            // 
+            this.rdbContaPoupanca.AutoSize = true;
+            this.rdbContaPoupanca.Location = new System.Drawing.Point(97, 29);
+            this.rdbContaPoupanca.Name = "rdbContaPoupanca";
+            this.rdbContaPoupanca.Size = new System.Drawing.Size(81, 17);
+            this.rdbContaPoupanca.TabIndex = 1;
+            this.rdbContaPoupanca.TabStop = true;
+            this.rdbContaPoupanca.Text = "CPoupança";
+            this.rdbContaPoupanca.UseVisualStyleBackColor = true;
+            // 
             // FormCadastroConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 181);
+            this.ClientSize = new System.Drawing.Size(265, 217);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.botaoCadastro);
             this.Controls.Add(this.textTitular);
             this.Controls.Add(this.textNumero);
@@ -90,6 +129,8 @@
             this.Name = "FormCadastroConta";
             this.Text = "FormCadastroConta";
             this.Click += new System.EventHandler(this.FormCadastroConta_Click);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +143,8 @@
         private System.Windows.Forms.TextBox textNumero;
         private System.Windows.Forms.TextBox textTitular;
         private System.Windows.Forms.Button botaoCadastro;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbContaPoupanca;
+        private System.Windows.Forms.RadioButton rdbContaCorrente;
     }
 }

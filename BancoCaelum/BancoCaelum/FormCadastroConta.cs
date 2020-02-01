@@ -22,11 +22,8 @@ namespace BancoCaelum
 
         private void FormCadastroConta_Click(object sender, EventArgs e)
         {
-            Conta novaConta = new ContaCorrente();
-            novaConta.Titular = new Cliente(textTitular.Text);
-            novaConta.Numero = Convert.ToInt32(textNumero.Text);
-
-            this.FormPrincipal.AdicionaConta(novaConta);
+                        
+            this.FormPrincipal.criarConta(textTitular.Text, Convert.ToInt32(textNumero.Text),rdbContaCorrente.Checked);
             this.Close();
         }
     }

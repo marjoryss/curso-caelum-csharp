@@ -90,9 +90,19 @@ namespace BancoCaelum
             criarConta("Osni", 3);
         }
 
-        private void criarConta(string Nome, int Numero)
+        public void criarConta(string Nome, int Numero, bool isContaCorrente = true)
         {
-            Conta c1 = new Conta();
+            Conta c1;
+
+            if (isContaCorrente)
+            {
+                c1 = new ContaCorrente();
+            }
+            else
+            {
+                c1 = new ContaPoupanca();
+            }
+            
             c1.Titular = new Cliente(Nome);
             c1.Numero = Numero;
             AdicionaConta(c1);

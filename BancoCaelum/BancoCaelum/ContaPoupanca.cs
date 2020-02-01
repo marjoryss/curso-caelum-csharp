@@ -6,11 +6,29 @@ using System.Threading.Tasks;
 
 namespace BancoCaelum
 {
-   public class ContaPoupanca : Conta
+    public class ContaPoupanca : Conta
     {
+        public override void Deposita(double valorDeposito)
+        {
+            if (valorDeposito > 0)
+            {
+                Saldo += valorDeposito;
+            }
+        }
+
         public override bool Saca(double valorSaque)
         {
-            return base.Saca(valorSaque+0.10);
+            if (this.Saldo >= valorSaque)
+            {
+                this.Saldo = this.Saldo - (valorSaque+0.1);
+                return true;
+            }
+            return false;
+                        
+        }
+        public override string ToString()
+        {
+            return $"{Numero} - cp - {Titular.Nome}";
         }
 
     }
