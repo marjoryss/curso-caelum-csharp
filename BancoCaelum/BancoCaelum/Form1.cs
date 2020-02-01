@@ -13,10 +13,19 @@ namespace BancoCaelum
     public partial class Form1 : Form
     {
         public Conta[] contas;
+        private int numeroDeContas;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public void AdicionaConta (Conta conta)
+        {
+            this.contas[this.numeroDeContas] = conta;
+            this.numeroDeContas++;
+            comboContas.Items.Add("Titular: " + conta.Titular.Nome);
+            comboContaDestino.Items.Add("Titular: " + conta.Titular.Nome);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -79,30 +88,18 @@ namespace BancoCaelum
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            contas = new Conta[3];
-            this.contas[0] = new Conta();
-            this.contas[0].Titular = new Cliente("Victor");
-            this.contas[0].Numero = 1;
-
-            this.contas[1] = new Conta();
-            this.contas[1].Titular = new Cliente("Mauricio");
-            this.contas[1].Numero = 2;
-
-            this.contas[2] = new Conta();
-            this.contas[2].Titular = new Cliente("Osni");
-            this.contas[2].Numero = 3;
-
-            foreach (Conta selecionada in contas) 
-            {
-                comboContas.Items.Add(selecionada.Titular.Nome);
-            }
-
-            foreach (Conta selecionada in contas)
-            {
-                comboContaDestino.Items.Add(selecionada.Titular.Nome);
-            }
-
-
+            contas = new Conta[10];
+            criarConta("Victor", 1);
+            criarConta("Mauricio", 2);
+            criarConta("Osni", 3);
+        }
+        
+        private void criarConta(string Nome, int Numero)
+        {
+            Conta c1 = new Conta();
+            c1.Titular = new Cliente(Nome);
+            c1.Numero = Numero;
+            this.AdicionaConta(c1);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -154,6 +151,12 @@ namespace BancoCaelum
             {
                 MessageBox.Show("Erro na transferencia");
             }
+        }
+
+        private void botaoNovaConta_Click(object sender, EventArgs e)
+        {
+            FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
+            formularioDeCadastro.ShowDialog();
         }
     }
 }

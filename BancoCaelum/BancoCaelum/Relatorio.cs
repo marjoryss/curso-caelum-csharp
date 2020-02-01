@@ -13,7 +13,8 @@ namespace BancoCaelum
         {
             foreach (Conta selecionada in contas)
             {
-                totalBanco += selecionada.Saldo;
+                if(selecionada != null)
+                    totalBanco += selecionada.Saldo;
             }
            
         }     
