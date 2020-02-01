@@ -31,7 +31,7 @@ namespace BancoCaelum
         {
             return $"{Numero} - cc - {Titular.Nome}";
         }
-             
+        
 
         public double CalculaTributos()
         {

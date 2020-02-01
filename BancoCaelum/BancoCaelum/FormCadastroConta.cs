@@ -22,8 +22,17 @@ namespace BancoCaelum
 
         private void FormCadastroConta_Click(object sender, EventArgs e)
         {
-                        
-            this.FormPrincipal.criarConta(textTitular.Text, Convert.ToInt32(textNumero.Text),rdbContaCorrente.Checked);
+            try
+            {
+                this.FormPrincipal.criarConta(textTitular.Text, Convert.ToInt32(textNumero.Text), rdbContaCorrente.Checked);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Dados Inválidos!");
+                MessageBox.Show(ex.Message);
+            }            
             this.Close();
         }
     }
